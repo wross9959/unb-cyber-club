@@ -1,18 +1,13 @@
 from fastapi import FastAPI
+from app.routes import users
 
 app = FastAPI()
 
+
+
+app.include_router(users.router, prefix="/api")
+
 @app.get("/")
-def read_root():
+def home():
     return {"message": "Cyber Club CRM API is running"}
-
-
-# test
-from fastapi import APIRouter
-
-router = APIRouter()
-
-@router.get("/test")
-async def test_api():
-    return {"message": "API is working!"}
 
