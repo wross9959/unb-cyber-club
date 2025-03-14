@@ -21,6 +21,12 @@ const nextConfig = {
     parallelServerBuildTraces: true,
     parallelServerCompiles: true,
   },
+  output: "export",
+  basePath: "/wross9959/unb-cyber-club", // Change to your GitHub repo name
+  trailingSlash: true, // Ensures all paths have a trailing slash
+  images: {
+    unoptimized: true, // GitHub Pages does not support Next.js Image Optimization
+  },
 }
 
 mergeConfig(nextConfig, userConfig)
